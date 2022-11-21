@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <meta charset="utf-8">
+        <title>Web Activity Time Tracker</title>
+        <!-- <link href="style/picker/standalone.min.css" rel="stylesheet">
+        <link href="style/picker/clockpicker.min.css" rel="stylesheet"> -->
+        <link href="style/settings.css" rel="stylesheet">
+      fg   
+    </head>
+</head>
+<body>
+        <div class="content">
+            <div class="header">
+                <p class="title" >Web Activity Time Tracker</p>
+            </div>
+            <div id="nav" class="nav">
+                <a id="settingsBtn" class="active">Settings</a>
+                <a id="restrictionsBtn">Limits</a>
+            </div>
+            <div id="block">
+                <div id="settingsBlock">
+                 
+                    <div class="margin-top-10">
+                        <label>
+                            <input type="checkbox" class="filled-in" id="blockDeferral">   
+                            <span>Allow deferring block for 5 minutes</span>
+                        </label>
+                    </div>
+                    
+                    <div class="margin-top-10">
+                        <label>Stop tracking if no activity detected for: </label>
+                        <div class="tooltip"><img height="18">
+                            <span class="tooltiptext">An activity is an action with a mouse or keyboard</span>
+                        </div>
+                        <div class="margin-top-10">
+                            <select id="intervalInactivity" class="option">
+                                <option value="30">30 seconds</option>
+                                <option value="45">45 seconds</option>
+                                <option value="60">1 min</option>
+                                <option value="120">2 min</option>
+                                <option value="300">5 mins</option>
+                                <option value="600">10 mins</option>
+                                <option value="1200">20 mins</option>
+                                <option value="1800">30 mins</option>
+                            </select>
+                        </div>
+                        
+                        <div class="margin-top-10">
+                            <label>Ignored list of domain: </label>
+                            <div class="tooltip"><img height="18">
+                                <span class="tooltiptext">Activity for these domains not will tracked</span>
+                            </div>
+                            <div class="margin-top-10">
+                                <ul id="blackList" class="listbox" size="7"></ul>
+                            </div>
+                            <div class="margin-top-10">
+                                <input type="text" placeholder="Enter site name..." id="addBlackSiteLbl">
+                                <input type="button" value="+" id="addBlackSiteBtn">
+                            </div>
+                            <div class="notify warning" id="notifyForBlackList" hidden="">
+                                The site is already in the list
+                            </div>
+                        </div>
+                        
+                        <div class="notify" id="notify-backup" hidden="">
+                            Backup completed successfully
+                        </div>
+                        <div class="notify" id="notify-restore" hidden="">
+                            Restore completed successfully
+                        </div>
+                        <div class="notify warning" id="notify-restore-failed" hidden="">
+                            Backup file is not valid
+                        </div>
+                      
+                        </div>
+                        <div class="notify" id="notify" hidden="">
+                            Data successfully deleted
+                        </div>
+                    </div>
+                </div>
+                <div id="restrictionsBlock" hidden="">
+                    <label>Access daily restrictions for websites: </label>
+                    <div class="tooltip"><img height="18">
+                        <span class="tooltiptext">Set the maximum time allowed on the site per day. After this time, has elapsed the site will be blocked. 
+                            Restrictions can be configured for specific paths on a site as well.</span>
+                    </div>
+                    <div class="margin-top-10">
+                        <input type="text" class="label-with-list" placeholder="Enter site name..." id="addRestrictionSiteLbl">
+                        <div class="inline-block clockpicker" data-placement="left" data-align="top" data-autoclose="true">
+                            <input type="text" class="clock" placeholder="Time..." readonly="" id="addRestrictionTimeLbl">
+                        </div>
+                        <input type="button" value="+" class="btn-with-list" id="addRestrictionSiteBtn">
+                    </div>
+                    <div class="margin-top-10">
+                        <ul id="restrictionsList" class="listbox list" size="10"></ul>
+                    </div>
+                    <div class="notify warning notify-width-300" id="notifyForRestrictionList" hidden="">
+                        The site is already in the list
+                    </div>
+                </div>
+                
+               
+                
+            </div>
+        </div>
+    
+    
+        <script src="scripts/common.js"></script>
+        <script src="scripts/storage.js"></script>
+        <script src="scripts/settings.js"></script>
+        <script src="scripts/restriction.js"></script>
+        <script src="scripts/url.js"></script>
+        <!-- <script src="scripts/picker/jquery-3.3.1.min.js"></script>
+        <script src="scripts/picker/clockpicker.min.js"></script> -->
+</body>
+</html>
+
+
+
+
+

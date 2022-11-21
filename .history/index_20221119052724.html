@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Web Activity Time Tracker</title>
+        <link href="style/webact.css" rel="stylesheet">
+        <link href="style/chart.css" rel="stylesheet">
+    </head>
+
+<body>
+    
+        <div id="preloader" class="preloader">
+            <div class="preloader__image">
+                <div class="title">Loading...</div>
+            </div>
+        </div>
+        <svg class="height-0">
+          <filter id="dropShadow">
+             <feGaussianBlur in="SourceAlpha" stdDeviation="3"></feGaussianBlur>
+             <feOffset dx="0" dy="1"></feOffset>
+             <feMerge>
+                <feMergeNode></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+             </feMerge>
+          </filter>
+       </svg>
+        <div id="extensionTitle">
+            <p class="title">Web Activity Time Tracker</p>
+        </div>
+        <div id="buttons" class="btn-block">
+            <a class="active" id="btnToday">Today</a>
+            <a id="btnByDays">By days</a>
+            <a id="settings">Settings</a>
+            <div id="hintForUsers" class="hint-for-settings hide">
+                <div id="closeHintBtn" class="close-hint">✖</div>
+                <p class="title-block">You can:</p>
+                <p><span class="arrow">➤</span> enable dark mode</p>
+                <p><span class="arrow">➤</span> set daily limits for sites</p>
+                <p><span class="arrow">➤</span> set notifications after a certain time has elapsed</p>
+                <p><span class="arrow">➤</span> set a list of sites with no tracking</p>
+                <p><span class="arrow">➤</span> enable time tracking on youtube.com</p>
+                <p><span class="arrow">➤</span> enable time tracking on Netflix.com</p>
+            </div>
+        </div>
+        <div id="stats" class="hide">
+                        <div class="inline-block">
+                            <div class="value-block" id="statInActiveDay"></div>
+                            <div class="span-time" id="statInActiveDayTime"></div>
+    
+                            <div class="value-block hide" id="statInActiveDayWithoutCurrentDay"></div>
+                            <div class="span-time hide" id="statInActiveDayTimeWithoutCurrentDay"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="blockForChartBtn">
+            <a class="button active chart-btn chart-btn-donut" id="donutChartBtn">Common chart</a>
+            <a class="button chart-btn chart-btn-heatmap" id="heatMapChartBtn">Time chart</a>
+        </div>
+        <div id="chart"></div>
+        <div id="labelForTimeInterval" class="warning hide">
+            <label>Only time intervals greater than 3 seconds are shown</label>
+        </div>
+        <div id="timeChart"></div>
+        <div id="resultTable" class="list-of-site"></div>
+        <div id="total" class="inline-flex"></div>
+        <div id="byDays" class="calendar-block"></div>
+    
+    
+</body>
+</html>
